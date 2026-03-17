@@ -1,0 +1,62 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 180px; /* Increased to make it very large without affecting navbar height */
+  width: auto;
+  max-height: 200px; /* Optional safety limit */
+  object-fit: contain;
+  margin-top: -30px; /* Pull it up slightly to overlap if it gets too big */
+  margin-bottom: -30px; /* Pull it down slightly */
+}
+
+.navbar-links {
+  display: flex;
+  gap: 3rem;
+  margin-left: auto;
+  margin-right: 3rem;
+}
+
+.navbar-links li a {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #ffb703; /* Yellow accent color based on screenshot */
+}
+
+.btn-join {
+  background-color: #eab308; /* Yellow joining color */
+  color: #000;
+  padding: 0.6rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-join:hover {
+  background-color: #facc15;
+  transform: scale(1.05);
+}
