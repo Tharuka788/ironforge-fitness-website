@@ -3,7 +3,9 @@ import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import Services from './components/Services/Services'
 import About from './components/About/About'
-import './App.css' // We will keep it but make it empty or minimal
+import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
+import './App.css'
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Hero />
       <About />
       <Services />
+      <Contact />
+      <Footer />
     </div>
   )
 }
