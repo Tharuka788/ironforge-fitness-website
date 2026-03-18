@@ -189,6 +189,17 @@
   .services-title {
     font-size: 2.5rem;
   }
+
+  .services-filter {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
   
   .services-cards-container {
     grid-template-columns: 1fr;

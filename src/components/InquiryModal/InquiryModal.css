@@ -239,3 +239,27 @@
   background: #eab308;
   color: #000;
 }
+
+@media (max-width: 768px) {
+  .inquiry-modal {
+    padding: 1.5rem;
+  }
+
+  .inquiry-title {
+    font-size: 1.8rem;
+  }
+  
+  .success-feedback h3 {
+    font-size: 1.5rem;
+  }
+
+  .success-feedback {
+    padding: 1.5rem 0;
+  }
+  
+  .modal-close-btn {
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+}

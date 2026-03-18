@@ -69,4 +69,16 @@
   .about-gallery {
     grid-template-columns: 1fr;
   }
+  
+  .about-title {
+    font-size: 1.5rem;
+  }
+  
+  .about-subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .about {
+    padding: 4rem 5%;
+  }
 }

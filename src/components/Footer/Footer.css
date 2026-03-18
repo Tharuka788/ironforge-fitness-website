@@ -113,3 +113,31 @@
     gap: 3rem;
   }
 }
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 5% 2rem;
+  }
+  
+  .footer-container {
+    text-align: center;
+    gap: 2.5rem;
+  }
+  
+  .footer-brand {
+    align-items: center;
+  }
+  
+  .footer-description {
+    max-width: 100%;
+  }
+  
+  .footer-socials {
+    justify-content: center;
+  }
+  
+  .hours-row {
+    justify-content: center;
+    gap: 2rem;
+  }
+}
