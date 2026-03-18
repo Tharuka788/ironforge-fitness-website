@@ -57,6 +57,40 @@
   margin: 0 auto;
 }
 
+.services-filter {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  color: #a3a3a3;
+  border: 1px solid #333;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: #eab308;
+  color: #fff;
+}
+
+.filter-btn.active {
+  background-color: #eab308;
+  color: #000;
+  border-color: #eab308;
+}
+
 .services-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
