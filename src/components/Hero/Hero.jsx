@@ -1,14 +1,16 @@
 import React from 'react';
 import './Hero.css';
 
-const Hero = () => {
+const Hero = ({ openContact }) => {
   return (
     <section className="hero">
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <h1 className="hero-title">
-          BE STRONG,<br />
-          <span className="text-yellow">TRAINING HARD</span>
+          <span className="stagger-word" style={{ animationDelay: '0.1s' }}>BE</span>{' '}
+          <span className="stagger-word" style={{ animationDelay: '0.2s' }}>STRONG,</span><br />
+          <span className="text-yellow stagger-word" style={{ animationDelay: '0.3s' }}>TRAINING</span>{' '}
+          <span className="text-yellow stagger-word" style={{ animationDelay: '0.4s' }}>HARD</span>
         </h1>
         
         <div className="hero-description-wrapper">
@@ -21,8 +23,8 @@ const Hero = () => {
         </div>
 
         <div className="hero-buttons">
-          <button className="btn-primary">GET INFO &rarr;</button>
-          <button className="btn-secondary">VIEW CLASSES</button>
+          <button onClick={openContact} className="btn-primary">GET INFO &rarr;</button>
+          <a href="#services" className="btn-secondary" style={{textDecoration: 'none', display: 'inline-block'}}>VIEW CLASSES</a>
         </div>
       </div>
     </section>

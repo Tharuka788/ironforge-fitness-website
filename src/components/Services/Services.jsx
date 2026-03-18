@@ -1,9 +1,11 @@
 import React from 'react';
 import './Services.css';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 
-const Services = () => {
+const Services = ({ openContact }) => {
+  const revealRef = useScrollReveal();
   return (
-    <section className="services" id="services">
+    <section className="services reveal" ref={revealRef} id="services">
       <div className="services-header">
         <div className="services-subtitle">
           <span className="line"></span>
@@ -33,7 +35,7 @@ const Services = () => {
           <p className="card-description">
             Bespoke coaching from industry elites tailored to your exact metabolic needs and strength goals.
           </p>
-          <a href="#explore-pt" className="card-link">EXPLORE &nearr;</a>
+          <button onClick={openContact} className="card-link">MORE INFO</button>
         </div>
 
         {/* Card 2 */}
@@ -51,7 +53,7 @@ const Services = () => {
           <p className="card-description">
             High-intensity, focused group sessions designed to build community while burning maximum calories.
           </p>
-          <a href="#explore-group" className="card-link">EXPLORE &nearr;</a>
+          <button onClick={openContact} className="card-link">MORE INFO</button>
         </div>
 
         {/* Card 3 */}
@@ -66,7 +68,7 @@ const Services = () => {
           <p className="card-description">
             State-of-the-art cardiovascular equipment equipped with performance tracking technology.
           </p>
-          <a href="#explore-cardio" className="card-link">EXPLORE &nearr;</a>
+          <button onClick={openContact} className="card-link">MORE INFO</button>
         </div>
       </div>
     </section>

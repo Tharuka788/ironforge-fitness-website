@@ -1,12 +1,14 @@
 import React from 'react';
 import './About.css';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import img1 from '../../assets/1.jpg';
 import img2 from '../../assets/2.jpg';
 import img3 from '../../assets/3.jpg';
 
 const About = () => {
+  const revealRef = useScrollReveal();
   return (
-    <section className="about" id="about">
+    <section className="about reveal" ref={revealRef} id="about">
       <div className="about-header">
         <h2 className="about-title">ABOUT US</h2>
         <h3 className="about-subtitle">Elevate Your Strength</h3>
