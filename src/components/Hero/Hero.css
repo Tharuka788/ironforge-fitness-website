@@ -2,8 +2,7 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url('../../assets/hero.jpg'); /* Using the image from the assets folder */
-  background-size: cover;
+  background-image: url('../../assets/hero.jpg');
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -37,7 +36,7 @@
 }
 
 .text-yellow {
-  color: #eab308; /* Matches the button and screenshot */
+  color: #eab308;
 }
 
 .hero-description-wrapper {

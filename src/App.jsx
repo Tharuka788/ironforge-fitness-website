@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
+import About from './components/About/About'
 import './App.css' // We will keep it but make it empty or minimal
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="app-container">
       <Navbar />
       <Hero />
+      <About />
     </div>
   )
 }
