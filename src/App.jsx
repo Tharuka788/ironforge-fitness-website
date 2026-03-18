@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="app-container">
       <Navbar />
-      <Hero openContact={() => setIsInquiryOpen(true)} />
+      <Hero />
       <About />
       <Services openContact={() => setIsInquiryOpen(true)} />
       {isInquiryOpen && <InquiryModal onClose={() => setIsInquiryOpen(false)} />}

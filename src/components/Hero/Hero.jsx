@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hero.css';
 
-const Hero = ({ openContact }) => {
+const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-overlay"></div>
@@ -23,7 +23,7 @@ const Hero = ({ openContact }) => {
         </div>
 
         <div className="hero-buttons">
-          <button onClick={openContact} className="btn-primary">GET INFO &rarr;</button>
+          <a href="#contact" className="btn-primary" style={{textDecoration: 'none', display: 'inline-block'}}>GET INFO &rarr;</a>
           <a href="#services" className="btn-secondary" style={{textDecoration: 'none', display: 'inline-block'}}>VIEW CLASSES</a>
         </div>
       </div>

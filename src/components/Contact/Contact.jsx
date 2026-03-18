@@ -8,6 +8,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -42,7 +43,7 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Final email validation check on submit
@@ -53,8 +54,41 @@ const Contact = () => {
     }
 
     if (formData.fullName && formData.email && formData.message) {
-      setIsSubmitted(true);
-      // Optional: Reset form after some time or leave as success state
+      setIsSubmitting(true);
+      
+      const payload = {
+        access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+        subject: `New Contact Message from ${formData.fullName}`,
+        from_name: formData.fullName,
+        from_email: formData.email,
+        message: formData.message
+      };
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          setIsSubmitted(true);
+          setFormData({ fullName: '', email: '', message: '' }); // Clear form
+        } else {
+          console.error("Error sending email:", result);
+          alert("Something went wrong. Please try again later.");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("Something went wrong. Please try again later.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -165,12 +199,14 @@ const Contact = () => {
                   required 
                 ></textarea>
               </div>
-              <button type="submit" className="btn-submit">
-                SEND
-                <svg className="icon-send" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
+              <button type="submit" className="btn-submit" disabled={isSubmitting}>
+                {isSubmitting ? 'SENDING...' : 'SEND'}
+                {!isSubmitting && (
+                  <svg className="icon-send" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                )}
               </button>
             </form>
           ) : (
